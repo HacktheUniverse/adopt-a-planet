@@ -1,0 +1,31 @@
+development:
+  sessions:
+    default:
+      database: adopt_a_planet_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
+test:
+  sessions:
+    default:
+      database: adopt_a_planet_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        max_retries: 1
+        retry_interval: 0
+
+production:
+  sessions:
+    default:
+      uri: mongodb://username:password@host1:port1,host2:port2//database'
+      options:
+        max_retries: 30
+        retry_interval: 1
+        timeout: 15
+        refresh_interval: 10
+
+
+
